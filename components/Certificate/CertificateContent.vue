@@ -1,10 +1,13 @@
 <template>
   <div class="content">
-
+    <slot />
   </div>
 </template>
 <style lang="scss">
 .content {
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+
   line-height: 16px;
 
   h1 {

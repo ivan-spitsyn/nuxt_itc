@@ -22,10 +22,9 @@ const props = defineProps({
 
       <div class="Banner__content">
         <h1 class="Banner__title"><slot name="title" /></h1>
-        <div class="Banner__description"><slot name="description" /></div>
-
-        <CertificateButton class="Banner__button">Оставить заявку</CertificateButton>
-
+        <CertificateContent class="Banner__description">
+          <slot name="description" />
+        </CertificateContent>
         <div v-if="props.partners.length" class="Banner__logo">
           <img v-for="{picture, name} in props.partners"
                :src="picture"

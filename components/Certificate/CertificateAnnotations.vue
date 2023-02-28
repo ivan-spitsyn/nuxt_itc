@@ -18,9 +18,11 @@ const props = defineProps({
 </template>
 <style scoped lang="scss">
 .annotations {
+  padding: 60px 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   gap: 32px;
 }
 </style>
