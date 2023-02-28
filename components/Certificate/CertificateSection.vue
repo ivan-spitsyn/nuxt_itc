@@ -33,7 +33,7 @@ const slots = useSlots();
     padding: 0;
 
     text-align: center;
-    @include text-3xl-medium;
+    font: var(--font-3xl-medium);
   }
   &__description {
     margin-top: 16px;

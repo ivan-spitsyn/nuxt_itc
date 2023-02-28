@@ -14,7 +14,6 @@ const props = defineProps({
     required: false
   }
 });
-import Button from './Button.vue';
 </script>
 
 <template>
@@ -24,7 +23,7 @@ import Button from './Button.vue';
       <div class="Banner__content">
         <h1 class="Banner__title"><slot name="title" /></h1>
         <div class="Banner__description"><slot name="description" /></div>
-        <Button class="Banner__button">Оставить заявку</Button>
+        <CertificateButton class="Banner__button">Оставить заявку</CertificateButton>
         <div v-if="props.partners.length" class="Banner__logo">
           <img v-for="{picture, name} in props.partners"
                :src="picture"
@@ -49,33 +48,33 @@ import Button from './Button.vue';
   display: flex;
   align-items: center;
 
-  @media (max-width: $media-mobile) {
+  @media (max-width: var(--bp-mobile)) {
     height: auto;
     padding-top: 88px;
   }
 
   &__title {
-    @include text-4xl-medium;
+    font: var(--font-4xl-medium);
     color: #fff;
     margin-bottom: 24px;
 
-    @media (max-width: $media-mobile) {
-      @include text-2xl-medium;
+    @media (max-width: var(--bp-mobile)) {
+      font: var(--font-2xl-medium);
     }
   }
 
   &__sub-title {
-    @include text-xl-medium;
+    font: var(--font-xl-medium);
     color: #fff;
     margin-bottom: 16px;
 
-    @media (max-width: $media-mobile) {
-      @include text-lg-medium;
+    @media (max-width: var(--bp-mobile)) {
+      font: var(--font-lg-medium);
     }
   }
 
   &__description {
-    @include text-lg;
+    font: var(--font-lg);
     color: #fff;
     margin-bottom: 24px;
 
@@ -84,20 +83,20 @@ import Button from './Button.vue';
     p:not(:last-child) {
       margin-bottom: 24px;
 
-      @media (max-width: $media-mobile) {
+      @media (max-width: var(--bp-mobile)) {
         margin-bottom: 0;
       }
     }
 
-    @media (max-width: $media-mobile) {
-      @include text-base;
+    @media (max-width: var(--bp-mobile)) {
+      font: var(--font-base);
     }
   }
 
   &__button {
     margin-bottom: 56px;
 
-    @media (max-width: $media-mobile) {
+    @media (max-width: var(--bp-mobile)) {
       width: 100%;
       margin-bottom: 24px;
     }
@@ -106,13 +105,11 @@ import Button from './Button.vue';
   &__image {
     padding-right: 30px;
 
-    @media (max-width: $media-mobile) {
+    @media (max-width: var(--bp-mobile)) {
       padding-right: 0;
-      margin-bottom: 26px;
       max-width: 75%;
       display: block;
-      margin: auto;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
 
       img {
         max-width: 100%;
@@ -121,7 +118,7 @@ import Button from './Button.vue';
   }
 
   &__container {
-    @media (max-width: $media-mobile) {
+    @media (max-width: var(--bp-mobile)) {
       flex-direction: column-reverse;
     }
 
@@ -137,7 +134,7 @@ import Button from './Button.vue';
       display: block;
     }
 
-    @media (max-width: $media-mobile) {
+    @media (max-width: var(--bp-mobile)) {
       margin-bottom: 40px;
     }
   }
