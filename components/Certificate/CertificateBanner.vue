@@ -4,7 +4,7 @@ const props = defineProps({
     type: Object,
     default: () => ({
       picture: '',
-      name: ''
+      alt: ''
     }),
     required: false
   },
@@ -23,7 +23,9 @@ const props = defineProps({
       <div class="Banner__content">
         <h1 class="Banner__title"><slot name="title" /></h1>
         <div class="Banner__description"><slot name="description" /></div>
+
         <CertificateButton class="Banner__button">Оставить заявку</CertificateButton>
+
         <div v-if="props.partners.length" class="Banner__logo">
           <img v-for="{picture, name} in props.partners"
                :src="picture"
@@ -32,7 +34,7 @@ const props = defineProps({
         </div>
       </div>
       <div v-if="props.cover" class="Banner__image">
-        <img :src="props.cover.picture" :alt="props.cover.name">
+        <img :src="props.cover.picture" :alt="props.cover.alt">
       </div>
     </div>
 
@@ -41,7 +43,7 @@ const props = defineProps({
 
 <style lang="scss">
 .Banner {
-  background: var(--color-gradient-primary);
+  background: linear-gradient(99.59deg, #001677 0%, #003B97 100%);
   height: 800px;
   padding-top: 134px;
 

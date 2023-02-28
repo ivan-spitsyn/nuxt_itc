@@ -15,10 +15,3 @@ useHead({
   titleTemplate: '%s | IBS Training Center',
 })
 </script>
-<style lang="scss">
-body {
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-}
-</style>

@@ -1,40 +1,77 @@
 <template>
-  <slot />
+  <CertificatePage>
+    <slot />
+  </CertificatePage>
 </template>
 <style lang="scss">
 :root {
+  //Media Query
   --bp-mobile: 1023px;
 
+  --gap: 20px;
+  --container-size: 1140px;
+  --container-size-small: 920px;
+
+  --color-gradient-primary: linear-gradient(99.59deg, #001677 0%, #003B97 100%);
+  --color-primary: #001677;
+  --color-error: #EB2D1A;
 
   --font-family-general: 'Stag Sans', Arial, sans-serif;
-  --font-size-h1: 52px;
 
-  --font-h1-size: 52px;
-  --font-h1-weight: 700;
-  --font-h1-line-height: 1.4;
+  --font-sm: 400 14px/20px  var(--font-family-general);
 
+  --font-base: 400 16px/24px var(--font-family-general);
+  --font-base-medium: 500 16px/24px var(--font-family-general);
 
-  --font-h1: var(--font-family-general) var(--font-h1-size) var(--font-h1-line-height);
+  --font-lg: 400 18px/32px var(--font-family-general);
+  --font-lg-medium: 500 18px/28px var(--font-family-general);
 
+  --font-xl: 400 22px/32px var(--font-family-general);
+  --font-xl-medium: 500 22px/32px var(--font-family-general);
 
-  --font-sm: var(--font-family-general) 14px 400 20px;
+  --font-2xl: 400 24px/32px var(--font-family-general);
+  --font-2xl-medium: 500 24px/32px var(--font-family-general);
 
-  --font-base: var(--font-family-general) 16px 400 24px;
-  --font-base-medium: var(--font-family-general) 16px 500 24px;
+  --font-3xl: 400 40px/56px var(--font-family-general);
+  --font-3xl-medium: 500 40px/56px var(--font-family-general);
 
-  --font-lg: var(--font-family-general) 18px 400 32px;
-  --font-lg-medium: var(--font-family-general) 18px 500 28px;
+  --font-4xl: 400 48px/64px var(--font-family-general);
+  --font-4xl-medium: 500 48px/64px var(--font-family-general);
+}
 
-  --font-xl: var(--font-family-general) 22px 400 32px;
-  --font-xl-medium: var(--font-family-general) 22px 500 32px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
 
-  --font-2xl: var(--font-family-general) 24px 400 32px;
-  --font-2xl-medium: var(--font-family-general) 24px 500 32px;
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  //font: var(--font-base);
+  font: 400 16px/24px 'Stag Sans', Arial, sans-serif;
+}
 
-  --font-3xl: var(--font-family-general) 40px 400 56px;
-  --font-3xl-medium: var(--font-family-general) 40px 500 56px;
+.container {
+  max-width: calc(var(--container-size) + (var(--gap) * 2));
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
 
-  --font-4xl: var(--font-family-general) 48px 400 64px;
-  --font-4xl-medium: var(--font-family-general) 48px 500 64px;
+  &_small {
+    max-width: calc(var(--container-size-small) + (var(--gap) * 2));
+  }
+}
+
+a {
+  text-decoration: none;
 }
 </style>
