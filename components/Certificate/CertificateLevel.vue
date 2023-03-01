@@ -12,7 +12,7 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  props: {
+  params: {
     type: Object,
     default: () => ({
       format: '',
@@ -23,115 +23,108 @@ const props = defineProps({
   }
 });
 </script>
+
 <template>
-  <div class="SectionLevel">
-    <div class="SectionLevel__left">
-      <img class="SectionLevel__image" :src="picture" :alt="name" />
-      <div class="SectionLevel__Info">
-        <div class="SectionLevel__Info-title">Из чего состоит экзамен?</div>
-        <div v-if="props.props.format" class="SectionLevel__item">
-          <div class="SectionLevel__item-icon">
+  <div class="CertificateLevel">
+    <div class="CertificateLevel__left">
+      <img class="CertificateLevel__label" :src="picture" :alt="name" />
+      <div class="CertificateLevel__params-title">Из чего состоит экзамен?</div>
+      <div class="CertificateLevel__params">
+        <div v-if="props.params.format" class="CertificateLevel__param">
+          <div class="CertificateLevel__param-icon">
             <img src="@/assets/images/certificate/level-icon-1.svg" alt="Формат"/>
           </div>
-          <div class="SectionLevel__item-info">
-            <div class="SectionLevel__item-sub-title">Формат</div>
-            <div class="SectionLevel__item-title">{{ props.props.format }}</div>
+          <div class="CertificateLevel__param-info">
+            <div class="CertificateLevel__param-name">Формат</div>
+            <div class="CertificateLevel__param-value">{{ props.params.format }}</div>
           </div>
         </div>
-        <div v-if="props.props.time" class="SectionLevel__item">
-          <div class="SectionLevel__item-icon">
+        <div v-if="props.params.time" class="CertificateLevel__param">
+          <div class="CertificateLevel__param-icon">
             <img src="@/assets/images/certificate/level-icon-2.svg" alt="Время"/>
           </div>
-          <div class="SectionLevel__item-info">
-            <div class="SectionLevel__item-sub-title">Время</div>
-            <div class="SectionLevel__item-title">{{ props.props.time }}</div>
+          <div class="CertificateLevel__param-info">
+            <div class="CertificateLevel__param-name">Время</div>
+            <div class="CertificateLevel__param-value">{{ props.params.time }}</div>
           </div>
         </div>
-        <div v-if="props.props.score" class="SectionLevel__item">
-          <div class="SectionLevel__item-icon">
+        <div v-if="props.params.score" class="CertificateLevel__param">
+          <div class="CertificateLevel__param-icon">
             <img src="@/assets/images/certificate/level-icon-3.svg" alt="Проходной балл"/>
           </div>
-          <div class="SectionLevel__item-info">
-            <div class="SectionLevel__item-sub-title">Проходной балл</div>
-            <div class="SectionLevel__item-title">{{props.props.score}}</div>
+          <div class="CertificateLevel__param-info">
+            <div class="CertificateLevel__param-name">Проходной балл</div>
+            <div class="CertificateLevel__param-value">{{props.params.score}}</div>
           </div>
         </div>
-        <div v-if="props.props.questions" class="SectionLevel__item">
-          <div class="SectionLevel__item-icon">
+        <div v-if="props.params.questions" class="CertificateLevel__param">
+          <div class="CertificateLevel__param-icon">
             <img src="@/assets/images/certificate/level-icon-4.svg" alt="Количество вопросов"/>
           </div>
-          <div class="SectionLevel__item-info">
-            <div class="SectionLevel__item-sub-title">Количество вопросов</div>
-            <div class="SectionLevel__item-title">{{props.props.questions}}</div>
+          <div class="CertificateLevel__param-info">
+            <div class="CertificateLevel__param-name">Количество вопросов</div>
+            <div class="CertificateLevel__param-value">{{props.params.questions}}</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="SectionLevel__right">
-      <div class="SectionLevel__title">{{ props.name }}</div>
-      <div v-if="props.price" class="SectionLevel__price">
+    <div class="CertificateLevel__right">
+      <div class="CertificateLevel__title">{{ props.name }}</div>
+      <div v-if="props.price" class="CertificateLevel__price">
         Стоимость сертификации: <span>{{props.price}}</span>
       </div>
-      <div class="SectionLevel__text">
-        <CertificateContent>
-          <slot />
-        </CertificateContent>
-      </div>
-      <div class="SectionLevel__buttons">
+      <CertificateContent class="CertificateLevel__content">
+        <slot />
+      </CertificateContent>
+      <div class="CertificateLevel__buttons">
         <CertificateButton size="lg" color="primary">Оставить заявку</CertificateButton>
         <CertificateButton size="lg" color="outline">Получить список тем</CertificateButton>
       </div>
     </div>
   </div>
 </template>
-<style lang="scss">
-.SectionLevel {
-  background: #ffffff;
-  border-radius: 12px;
+
+<style scoped lang="scss">
+.CertificateLevel {
   display: flex;
   margin-bottom: 32px;
-  @media (max-width: var(--bp-mobile)) {
-    flex-wrap: wrap;
-  }
-
-  &__image {
-    display: block;
-    margin: auto;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 0 1px #aaaaaa;
+  overflow: hidden;
 
   &__left {
-    max-width: 300px;
     width: 100%;
-    background: rgba(0, 59, 151, 0.04);
+    max-width: 300px;
     padding: 40px;
+    background: rgba(0, 59, 151, 0.04);
     color: #000;
-    @media (max-width: var(--bp-mobile)) {
-      max-width: 100%;
-      padding: 20px;
-      padding-bottom: 0;
-    }
   }
 
-  &__Info {
-    margin-top: 32px;
+  &__label {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto 32px auto;
+  }
 
+  &__params {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
     &-title {
       margin-bottom: 16px;
-      font: var(--font-lg-medium);
-      @media (max-width: var(--bp-mobile)) {
-        font: var(--font-base-medium);
-      }
+      font: var(--font-p-medium);
     }
   }
 
-  &__item {
+  &__param {
     display: flex;
-    margin-bottom: 12px;
-
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
     &-icon {
       margin-right: 12px;
       @media (max-width: var(--bp-mobile)) {
@@ -141,6 +134,47 @@ const props = defineProps({
         }
       }
     }
+    &-info {
+
+    }
+    &-name {
+      color: #676E76;
+      font: var(--font-tiny);
+    }
+    &-value {
+      font: var(--font-p-medium);
+    }
+  }
+
+
+  &__right {
+
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 20px;
+    @media (max-width: var(--bp-mobile)) {
+      font: var(--font-base);
+      margin-bottom: 8px;
+    }
+  }
+
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+
+  &__info {
+    margin-top: 32px;
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 12px;
 
     &-sub-title {
       color: #676e76;
@@ -163,16 +197,6 @@ const props = defineProps({
     }
   }
 
-  &__title {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 44px;
-    margin-bottom: 20px;
-    @media (max-width: var(--bp-mobile)) {
-      font: var(--font-base);
-      margin-bottom: 8px;
-    }
-  }
 
   &__price {
     font: var(--font-lg-medium);
@@ -201,48 +225,6 @@ const props = defineProps({
     }
   }
 
-  &__sub-title {
-    font: var(--font-xl-medium);
-    margin-bottom: 20px;
-    @media (max-width: var(--bp-medium)) {
-      font: var(--font-base-medium);
-    }
-  }
-
-  &__list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-    &-item {
-      margin-bottom: 16px;
-      font: var(--font-lg);
-      position: relative;
-      display: flex;
-      @media (max-width: var(--bp-mobile)) {
-        font: var(--font-base);
-      }
-
-      &::before {
-        content: "";
-        width: 24px;
-        height: 24px;
-        min-width: 24px;
-        min-height: 24px;
-        margin-right: 12px;
-        display: block;
-        margin-top: 6px;
-        background-image: url(@/assets/images/certificate/check/black.svg);
-        @media (max-width: var(--bp-mobile)) {
-          margin-top: 2px;
-        }
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
 
   &__buttons {
     display: flex;

@@ -12,7 +12,7 @@
   </footer>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .Footer {
   background: var(--color-gradient-primary);
   height: 80px;

@@ -18,6 +18,28 @@
 
   --font-family-general: 'Stag Sans', Arial, sans-serif;
 
+  --font-h1: 400 48px/64px var(--font-family-general);
+  --font-h1-medium: 500 48px/64px var(--font-family-general);
+
+  --font-h2: 400 40px/56px var(--font-family-general);
+  --font-h2-medium: 500 40px/56px var(--font-family-general);
+
+  --font-h3: 400 32px/44px var(--font-family-general);
+  --font-h3-medium: 500 32px/44px var(--font-family-general);
+
+  --font-h4: 400 22px/32px var(--font-family-general);
+  --font-h4-medium: 500 22px/32px var(--font-family-general);
+
+  --font-p: 400 18px/26px var(--font-family-general);
+  --font-p-medium: 500 18px/26px var(--font-family-general);
+
+  --font-small: 400 16px/24px var(--font-family-general);
+  --font-small-medium: 500 18px/26px var(--font-family-general);
+
+  --font-tiny: 400 14px/20px var(--font-family-general);
+  --font-tiny-medium: 500 14px/20px var(--font-family-general);
+
+
   --font-sm: 400 14px/20px  var(--font-family-general);
 
   --font-base: 400 16px/24px var(--font-family-general);

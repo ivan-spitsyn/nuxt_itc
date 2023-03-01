@@ -26,7 +26,7 @@
   </header>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .header {
   padding: 24px 0;
   position: absolute;

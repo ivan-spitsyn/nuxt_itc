@@ -19,7 +19,7 @@ const props = defineProps({
   </button>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .Button {
   height: 48px;
   border-radius: 6px;

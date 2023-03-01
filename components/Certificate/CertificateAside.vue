@@ -8,18 +8,20 @@
   </div>
 </div>
 </template>
-<style lang="scss">
+<style scoped lang="scss">
 .aside {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 10px;
-  &__image {
+  &__icon {
+    margin: 0;
     img {
       display: block;
     }
   }
   &__text {
+    margin: 0;
     font: var(--font-base);
     color: #676E76;
 

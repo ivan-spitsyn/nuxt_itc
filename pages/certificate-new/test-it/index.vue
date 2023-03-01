@@ -7,8 +7,8 @@ definePageMeta({
 });
 
 import bannerPicture from '@/assets/images/certificate/test-it/banner-main.svg';
-import partnerIbs from '@/assets/images/certificate/test-it/partner_ibs.svg';
-import partnerTestIt from '@/assets/images/certificate/test-it/partner_test_it.svg';
+import partnerIbs from '@/assets/images/certificate/partner_ibs.svg';
+import partnerTestIt from '@/assets/images/certificate/partner_test-it.svg';
 </script>
 <template>
   <CertificateBanner

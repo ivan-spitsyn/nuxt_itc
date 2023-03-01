@@ -5,7 +5,7 @@ definePageMeta({
 });
 
 import pictureBanner from '@/assets/images/certificate/analyst/banner-main.svg';
-import picturePartnerSk from '@/assets/images/certificate/analyst/partner-sk.svg';
+import picturePartnerSk from '@/assets/images/certificate/partner_sk.svg';
 
 import pictureAbout1 from '@/assets/images/certificate/analyst/about-1.jpg';
 import pictureAbout2 from '@/assets/images/certificate/analyst/about-2.jpg';
@@ -22,7 +22,6 @@ import pictureLevel2 from '@/assets/images/certificate/analyst/level-2.png';
     <template #title>Центр Российской сертификации системных аналитиков</template>
     <template #description>
       <h4>Независимая объективная оценка компетенций</h4>
-      <br>
       <p>IBS Training Center — ведущий провайдер России и СНГ по оценке компетенций и обучению системных аналитиков.</p>
       <p>ИТ-кластер фонда «Сколково» — всероссийская площадка для развития и поддержки новых технологий в отрасли
         ИТ.</p>
@@ -118,7 +117,7 @@ import pictureLevel2 from '@/assets/images/certificate/analyst/level-2.png';
         name="Базовый уровень"
         price="11 900 руб."
         :picture="pictureLevel1"
-        :props="{
+        :params="{
           format: 'Офлайн',
           time: '180 минут',
           score: '70%',
@@ -140,7 +139,7 @@ import pictureLevel2 from '@/assets/images/certificate/analyst/level-2.png';
         name="Продвинутый уровень"
         price="14 900 руб."
         :picture="pictureLevel2"
-        :props="{
+        :params="{
           format: 'Офлайн',
           time: '180 минут',
           score: '70%',

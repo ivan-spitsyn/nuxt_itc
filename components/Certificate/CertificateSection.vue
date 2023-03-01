@@ -2,6 +2,7 @@
 import {useSlots} from "vue";
 const slots = useSlots();
 </script>
+
 <template>
   <section class="CertificateSection">
     <div v-if="slots.header || slots.title || slots.description" class="CertificateSection__header">
@@ -19,9 +20,15 @@ const slots = useSlots();
     </div>
   </section>
 </template>
+
 <style lang="scss">
 .CertificateSection {
   position: relative;
+
+  &_blue {
+    background: var(--color-gradient-primary);
+    color: #ffffff;
+  }
 
   &__header {
     display: flex;
@@ -29,6 +36,7 @@ const slots = useSlots();
     gap: 16px;
     margin-bottom: 48px;
   }
+
   &__title {
     margin: 0;
     padding: 0;
@@ -36,6 +44,7 @@ const slots = useSlots();
     text-align: center;
     font: var(--font-3xl-medium);
   }
+
   &__description {
     margin-top: 16px;
 
@@ -46,12 +55,20 @@ const slots = useSlots();
     line-height: 32px;
   }
 
+  &__content {}
+
+  &__footer {}
+
   &__row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
     gap: 34px;
+
+    &_stretch {
+      align-items: stretch;
+    }
   }
   &__row + &__row {
     margin-top: 64px;
@@ -65,8 +82,5 @@ const slots = useSlots();
       border-radius: 12px;
     }
   }
-
-  &__content {}
-  &__footer {}
 }
 </style>

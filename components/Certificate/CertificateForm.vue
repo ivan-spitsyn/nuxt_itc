@@ -6,7 +6,6 @@ import {vMaska} from "maska"
 import {useVuelidate} from '@vuelidate/core'
 import {required, email, minLength} from '@vuelidate/validators'
 
-
 const locations = [
   {label: 'Москва', value: 'msk'},
   {label: 'Санкт-Петербург', value: 'spb'},
@@ -92,6 +91,7 @@ async function submit(v$) {
       });
 }
 </script>
+
 <template>
   <CertificateSection>
     <div class="request">
@@ -174,6 +174,7 @@ async function submit(v$) {
     </div>
   </CertificateSection>
 </template>
+
 <style lang="scss">
 .request {
   position: relative;
@@ -291,6 +292,7 @@ async function submit(v$) {
 }
 
 .vs__selected {
+  height: 100%!important;
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
