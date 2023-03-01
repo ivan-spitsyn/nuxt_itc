@@ -21,6 +21,17 @@ import partnerTestIt from '@/assets/images/certificate/test-it/partner_test_it.s
     </template>
   </CertificateBanner>
 
+  <CertificateSection>
+    <template #title>Как принять участие?</template>
+    <CertificateContent>
+      <p> Допуск к экзамену осуществляется по предварительной записи. Чтобы получить его, заполните форму на сайте. В
+        согласованное время нужно прибыть в авторизованный экзаменационный центр и предъявить документ, удостоверяющий
+        личность. Если вы не явились на экзамен, согласуйте новую дату для его прохождения. </p>
+      <CertificateAside>
+        Перед стартом рекомендуем ознакомиться с <a href="/">Правилами проведения сертификации.</a>
+      </CertificateAside>
+    </CertificateContent>
+  </CertificateSection>
   <CertificateForm />
-  <CertificateMap />
+  <CertificateSectionMap />
 </template>

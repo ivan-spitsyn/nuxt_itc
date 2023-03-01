@@ -3,25 +3,26 @@ import {useSlots} from "vue";
 const slots = useSlots();
 </script>
 <template>
-  <section class="section">
-    <div v-if="slots.header || slots.title || slots.description" class="section__header">
+  <section class="CertificateSection">
+    <div v-if="slots.header || slots.title || slots.description" class="CertificateSection__header">
       <div class="container">
-        <div v-if="slots.title" class="section__title"><slot name="title" /></div>
-        <div v-if="slots.description" class="section__description"><slot name="description" /></div>
+        <div v-if="slots.title" class="CertificateSection__title"><slot name="title" /></div>
+        <div v-if="slots.description" class="CertificateSection__description"><slot name="description" /></div>
         <slot name="header" />
       </div>
     </div>
-    <div class="section__content">
+    <div class="CertificateSection__content">
       <div class="container"><slot /></div>
     </div>
-    <div v-if="slots.footer" class="section__footer">
+    <div v-if="slots.footer" class="CertificateSection__footer">
       <div class="container"><slot name="footer" /></div>
     </div>
   </section>
 </template>
 <style lang="scss">
-.section {
+.CertificateSection {
   position: relative;
+
   &__header {
     display: flex;
     flex-direction: column;
@@ -44,6 +45,7 @@ const slots = useSlots();
     font-size: 22px;
     line-height: 32px;
   }
+
   &__row {
     display: flex;
     flex-direction: row;
