@@ -47,7 +47,7 @@ const props = defineProps({
       position: absolute;
       top: 0;
       left: 0;
-      background: url('@/assets/images/certificate/check-green.svg') center / contain no-repeat;
+      background: url('@/assets/images/certificate/check/green.svg') center / contain no-repeat;
       opacity: 0;
     }
   }

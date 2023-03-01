@@ -232,7 +232,7 @@ const props = defineProps({
         margin-right: 12px;
         display: block;
         margin-top: 6px;
-        background-image: url(@/assets/images/certificate/icons-level.svg);
+        background-image: url(@/assets/images/certificate/check/black.svg);
         @media (max-width: var(--bp-mobile)) {
           margin-top: 2px;
         }
