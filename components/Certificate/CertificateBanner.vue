@@ -1,141 +1,61 @@
 <script setup>
+const slots = useSlots();
 const props = defineProps({
-  cover: {
-    type: Object,
-    default: () => ({
-      picture: '',
-      alt: ''
-    }),
-    required: false
-  },
-  partners: {
-    type: Array,
-    default: () => ([]),
-    required: false
+  picture: {
+    type: String,
+    default: ''
   }
 });
 </script>
-
 <template>
-  <div class="Banner">
-    <div class="Banner__container container">
-      <div class="Banner__content">
-        <h1 class="Banner__title"><slot name="title" /></h1>
-        <CertificateContent class="Banner__description">
-          <slot name="description" />
-        </CertificateContent>
-        <div v-if="props.partners.length" class="Banner__logo">
-          <img v-for="{picture, name} in props.partners"
-               :src="picture"
-               :alt="name"
-          >
-        </div>
-      </div>
-      <div v-if="props.cover" class="Banner__view">
-        <img :src="props.cover.picture" :alt="props.cover.alt">
-      </div>
+  <div class="CertificateBanner">
+    <div class="CertificateBanner__info">
+      <div class="CertificateBanner__title"><slot name="title" /></div>
+      <CertificateContent class="CertificateBanner__content">
+        <slot />
+      </CertificateContent>
+      <div v-if="slots.button" class="CertificateBanner__button"><slot name="button"/></div>
+    </div>
+    <div class="CertificateBanner__view">
+      <img :src="props.picture" alt="">
     </div>
   </div>
 </template>
-
 <style scoped lang="scss">
-.Banner {
-  background: linear-gradient(99.59deg, #001677 0%, #003B97 100%);
-  height: 800px;
-  padding-top: 134px;
+.CertificateBanner {
+  background: rgba(0, 59, 151, 0.12);
+  border-radius: 12px;
+  padding: 32px 40px;
+  background: linear-gradient(99.59deg,#001677 0%,#003B97 100%);
 
-  display: flex;
-  align-items: center;
-
-  &__container {
+  &__info {
+    width: 66%;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 32px;
+    color: #ffffff;
   }
 
   &__title {
-    font: var(--font-h1-medium);
-    color: #fff;
-    margin-bottom: 24px;
+    font: var(--font-h2-medium);
   }
 
-  &__description {
-    font: var(--font-p);
-    color: #fff;
-    margin-bottom: 24px;
-
-    max-width: 90%;
-
-    p:not(:last-child) {
-      margin-bottom: 24px;
-    }
-  }
-
-  &__logo {
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-
-    img {
-      display: block;
-      max-width: 100%;
-      max-height: 48px;
-    }
-  }
-
-  &__button {
-    margin-bottom: 56px;
-  }
+  &__content {}
 
   &__view {
+    max-width: 34%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
     img {
       display: block;
-      max-width: 100%;
-      object-fit: contain;
-    }
-  }
-}
-
-@media (max-width: var(--bp-mobile)) {
-  .Banner {
-    height: auto;
-    padding-top: 88px;
-
-    &__title {
-      font: var(--font-2xl-medium);
-    }
-
-    &__sub-title {
-      font: var(--font-lg-medium);
-    }
-
-    &__description {
-      font: var(--font-base);
-      p:not(:last-child) {
-        margin-bottom: 0;
-      }
-    }
-
-    &__button {
       width: 100%;
-      margin-bottom: 24px;
-    }
-
-    &__image {
-      padding-right: 0;
-      max-width: 75%;
-      display: block;
-      margin: 0 auto 20px;
-
-      img {
-        max-width: 100%;
-      }
-    }
-
-    &__container {
-      flex-direction: column-reverse;
-    }
-
-    &__logo {
-      margin-bottom: 40px;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
   }
 }

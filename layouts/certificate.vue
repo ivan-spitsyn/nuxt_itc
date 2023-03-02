@@ -1,16 +1,21 @@
 <template>
-  <CertificatePage>
-    <slot />
-  </CertificatePage>
+  <slot />
 </template>
 <style lang="scss">
 :root {
   //Media Query
+  --bp-tablet: 1167px;
   --bp-mobile: 1023px;
 
   --gap: 20px;
   --container-size: 1140px;
   --container-size-small: 920px;
+
+  --color-brand-red: #e60000;
+  --color-brand-grey: #eeeeee;
+  --color-brand-dark: #424A52;
+  --color-brand-blue: #184188;
+  --color-brand-turquoise: #14B4C9;
 
   --color-gradient-primary: linear-gradient(99.59deg, #001677 0%, #003B97 100%);
   --color-primary: #001677;

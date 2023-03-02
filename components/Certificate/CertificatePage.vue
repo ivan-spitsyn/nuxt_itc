@@ -1,6 +1,9 @@
 <template>
   <div class="page">
-    <CertificateHeader />
+    <CertificateHeader>
+      <template #menu><slot name="menu" /></template>
+      <template #button><slot name="button" /></template>
+    </CertificateHeader>
     <div class="page__content">
       <slot />
       <CertificateFooter />

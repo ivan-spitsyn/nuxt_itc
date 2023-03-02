@@ -20,9 +20,9 @@ const items = [
 </script>
 
 <template>
-  <div v-if="props.items.length" class="annotations">
+  <div class="annotations">
     <CertificateAnnotation
-        v-for="{link, title, description} in props.items" :key="link"
+        v-for="{link, title, description} in items" :key="link"
         :link="link"
         :title="title"
         :description="description"

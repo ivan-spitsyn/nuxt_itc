@@ -5,9 +5,11 @@
 </template>
 <style lang="scss">
 .CertificateContent {
+  font: var(--font-p);
+
   * {
-    margin-top: 1.4em;
-    margin-bottom: 1.4em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 
     &:first-child {
       margin-top: 0;
@@ -71,6 +73,20 @@
         top: 0;
         background-image: url(@/assets/images/icons/check/white.svg);
         margin-right: 12px;
+      }
+    }
+
+    &.circle {
+      padding-left: 56px;
+      li {
+        &::before {
+          width: 40px;
+          height: 40px;
+          min-width: 40px;
+          min-height: 40px;
+          left: -56px;
+          background-image: url(@/assets/images/icons/check/circle-green.svg);
+        }
       }
     }
   }

@@ -30,6 +30,12 @@ const slots = useSlots();
     color: #ffffff;
   }
 
+  &_levels {
+    padding: 120px 0;
+    background: var(--color-gradient-primary);
+    color: #ffffff;
+  }
+
   &__header {
     display: flex;
     flex-direction: column;
@@ -71,7 +77,7 @@ const slots = useSlots();
     }
   }
   &__row + &__row {
-    margin-top: 64px;
+    margin-top: 40px;
   }
   &__col {
     width: 100%;

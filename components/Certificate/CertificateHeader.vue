@@ -1,28 +1,19 @@
+<script setup>
+const slots = useSlots();
+</script>
 <template>
   <header class="header">
     <div class="container header__container">
       <a href="/" class="header__logo">
         <img src="@/assets/images/certificate/logo.svg"/>
       </a>
-      <div class="header__menu-wrap">
-        <ul class="header__menu">
-          <li class="header__menu-item">
-            <a href="/" class="header__menu-link">О нас</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="/" class="header__menu-link">Сертификация</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="/" class="header__menu-link">Правила</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="/" class="header__menu-link">Контакты</a>
-          </li>
-        </ul>
-        <CertificateButton>Пройти обучение и сертификацию</CertificateButton>
+      <div v-if="slots.menu" class="header__menu">
+        <slot name="menu"/>
+      </div>
+      <div v-if="slots.button" class="header__button">
+        <slot name="button"/>
       </div>
     </div>
-
   </header>
 </template>
 
@@ -35,70 +26,33 @@
   right: 0;
   z-index: 100;
 
-  @media (max-width: var(--bp-mobile)) {
-    padding: 12px 0;
-  }
-
-
   &__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
     align-items: center;
-    justify-content: space-between;
   }
 
   &__logo {
-    @media (max-width: var(--bp-mobile)) {
-      max-width: 145px;
-    }
-
     img {
       display: block;
     }
   }
 
-  &__menu {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
+  &__button {
+    margin-left: 16px;
+  }
 
-    &-wrap {
-      display: flex;
-      align-items: center;
+  @media (max-width: var(--bp-mobile)) {
+    padding: 12px 0;
 
-      @media (max-width: var(--bp-mobile)) {
-        display: none;
-      }
+    &__logo {
+      max-width: 145px;
     }
-
-    &-item {
-      padding: 10px;
-      position: relative;
-      margin-right: 16px;
-
-      &:not(:last-child)::after {
-        content: '';
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: 1px;
-        background: #fff;
-        display: block;
-        position: absolute;
-      }
+    &__menu {
+      display: none;
     }
-
-    &-link {
-      color: #FFFFFF;
-      margin-right: 16px;
-
-      @media (hover: hover) {
-        &:hover {
-          opacity: 0.8;
-        }
-
-      }
-
+    &__button {
+      display: none;
     }
   }
 }
