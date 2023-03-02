@@ -1,8 +1,11 @@
+<script setup>
+const slots = useSlots();
+</script>
 <template>
   <div class="CertificatePrice">
-    <div class="CertificatePrice__text">Стоимость сертификации — 20 000 ₽</div>
-    <div class="CertificatePrice__button">
-      <CertificateButton>Пройти сертификацию</CertificateButton>
+    <div class="CertificatePrice__text"><slot /></div>
+    <div v-if="slots.button" class="CertificatePrice__button">
+      <slot name="button" />
     </div>
   </div>
 </template>

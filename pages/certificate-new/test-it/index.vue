@@ -129,6 +129,55 @@ import pictureBanner from '@/assets/images/certificate/test-it/banner.svg';
     </CertificateSection>
 
     <CertificateSection>
+      <template #title>Преимущества сертификации от IBS Training Center & Test IT</template>
+      <CertificateReasons>
+        <div class="CertificateReasons__item">
+          <div class="CertificateReasons__title">
+            <img src="@/assets/images/certificate/test-it/reason-1.svg" alt="">
+          </div>
+          <div class="CertificateReasons__text">Для обучения и сертификации используются программы, авторизованные вендором</div>
+        </div>
+
+        <div class="CertificateReasons__item">
+          <div class="CertificateReasons__title">10 000+</div>
+          <div class="CertificateReasons__text">Количество тестировщиков, которых мы обучили и протестировали</div>
+        </div>
+
+        <div class="CertificateReasons__item">
+          <div class="CertificateReasons__card">
+            <div class="CertificateReasons__card-view">
+              <img class="CertificateReasons__card-image"
+                   src="@/assets/images/certificate/test-it/reason.png"
+                   alt="">
+              <img class="CertificateReasons__card-image CertificateReasons__card-image_mobile"
+                   src="@/assets/images/certificate/test-it/reason_mobile.png"
+                   alt="">
+            </div>
+
+            <div class="CertificateReasons__card-info">
+              <span class="CertificateReasons__card-title">№1</span>
+              <span class="CertificateReasons__card-description">
+            Первая официальная программа сертификации на российский инструмент управления тестированием
+          </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="CertificateReasons__item">
+          <div class="CertificateReasons__title">20+</div>
+          <div class="CertificateReasons__text">Лет опыта обучения и тестирования ИТ-специалистов на рынкеРоссии и СНГ</div>
+        </div>
+
+        <div class="CertificateReasons__item">
+          <div class="CertificateReasons__title">
+            <img src="@/assets/images/certificate/test-it/reason-5.svg" alt="">
+          </div>
+          <div class="CertificateReasons__text">Сертификационные центры в разных регионах России</div>
+        </div>
+      </CertificateReasons>
+    </CertificateSection>
+
+    <CertificateSection>
       <div class="CertificateSection__row">
         <div class="CertificateSection__col">
           <CertificateContent>
@@ -176,13 +225,22 @@ import pictureBanner from '@/assets/images/certificate/test-it/banner.svg';
         <div class="CertificateSection__col CertificateSection__col_border">
           <CertificateContent>
             <h3>Сертификация состоит из:</h3>
+            <CertificateNumberTextGroup col="2">
+              <CertificateNumberText number="6" text="Тем" />
+              <CertificateNumberText number="52" text="Вопроса" />
+              <CertificateNumberText number="90 минут" text="Длительность " />
+              <CertificateNumberText number="85%" text="Проходной порог для успешной сдачи" />
+            </CertificateNumberTextGroup>
           </CertificateContent>
         </div>
       </div>
     </CertificateSection>
 
     <CertificateSection>
-      <CertificatePrice />
+      <CertificatePrice>
+        Стоимость сертификации — 20 000 ₽
+        <template #button><CertificateButton>Пройти сертификацию</CertificateButton></template>
+      </CertificatePrice>
     </CertificateSection>
 
     <CertificateSection>

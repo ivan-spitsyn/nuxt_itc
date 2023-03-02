@@ -7,7 +7,7 @@
 .CertificateContent {
   font: var(--font-p);
 
-  * {
+  & > * {
     margin-top: 1em;
     margin-bottom: 1em;
 
@@ -62,6 +62,8 @@
     padding-left: 36px;
     li {
       position: relative;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
       &::before {
         content: '';
         width: 24px;

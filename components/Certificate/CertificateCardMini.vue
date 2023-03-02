@@ -24,7 +24,7 @@ const slots = useSlots();
   gap: 20px;
   margin: auto;
   padding: 56px 48px;
-  background: var(--color-primary);
+  background: #003B97;
   border-radius: 12px;
   color: #fff;
 

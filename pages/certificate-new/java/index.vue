@@ -130,7 +130,7 @@ import pictureLevel2 from '@/assets/images/certificate/java/level_2.png';
 
     <CertificateSection>
       <template #title>5 причин пройти сертификацию в IBS Training Center</template>
-      <CertificateJavaReasons />
+      <CertificateReasonsJava />
     </CertificateSection>
 
 

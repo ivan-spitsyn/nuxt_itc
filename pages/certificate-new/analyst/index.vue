@@ -125,10 +125,48 @@ import pictureLevel2 from '@/assets/images/certificate/analyst/level-2.png';
     </CertificateSection>
 
     <CertificateSection>
-      <template>5 причин пройти сертификацию в <br>IBS Training Center</template>
-      <CertificateFifeAdvantages>
+      <template #title>5 причин пройти сертификацию в <br>IBS Training Center</template>
+      <CertificateReasons>
+        <div class="CertificateReasons__item">
+          <div class="CertificateReasons__title">10 000+</div>
+          <div class="CertificateReasons__text">
+            Количество аналитиков, которых мы обучили и протестировали
+          </div>
+        </div>
 
-      </CertificateFifeAdvantages>
+        <div class="CertificateReasons__item">
+          <div class="CertificateReasons__title">20+</div>
+          <div class="CertificateReasons__text">Лет опыта обучения и тестирования ИТ-специалистов на рынке России и СНГ</div>
+        </div>
+
+        <div class="CertificateReasons__item">
+          <div class="CertificateReasons__card">
+            <div class="CertificateReasons__card-view">
+              <img class="CertificateReasons__card-image"
+                   src="@/assets/images/certificate/test-it/reason.png"
+                   alt="">
+              <img class="CertificateReasons__card-image CertificateReasons__card-image_mobile"
+                   src="@/assets/images/certificate/test-it/reason_mobile.png"
+                   alt="">
+            </div>
+
+            <div class="CertificateReasons__card-info">
+          <span class="CertificateReasons__card-subtitle"
+          >Сертификационные центры&nbsp;во&nbsp;всех частях&nbsp;России</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="CertificateReasons__item">
+          <div class="CertificateReasons__title">30+</div>
+          <div class="CertificateReasons__text">Уникальных курсов по аналитике в нашем каталоге</div>
+        </div>
+
+        <div class="CertificateReasons__item">
+          <div class="CertificateReasons__title">80%</div>
+          <div class="CertificateReasons__text">Возвращаются к нам</div>
+        </div>
+      </CertificateReasons>
     </CertificateSection>
 
     <CertificateSection class="CertificateSection_levels">
